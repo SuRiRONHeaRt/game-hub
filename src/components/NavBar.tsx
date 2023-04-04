@@ -5,6 +5,7 @@ import ColorModeSwitch from "./ColorModeSwitch";
 const NavBar = () => {
   return (
     /* navbar එක  horizontal stack එකක් විදියට.. */
+    /* works just like a flex-container */
     <HStack justifyContent="space-between" padding="10px">
       <Image src={logo} boxSize="60px" />
       <ColorModeSwitch />
