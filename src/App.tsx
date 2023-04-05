@@ -11,6 +11,10 @@ function App() {
         base: `"nav" "main"` /* mobile phone වලට */,
         lg: `"nav nav" "aside main"` /* 1024px laptop වගේ ලොකු screen තියෙන ඒවට. */,
       }}
+      templateColumns={{
+        base: "1fr",
+        lg: "200px 1fr",
+      }}
     >
       {/* navigation bar එක */}
       <GridItem area="nav">
@@ -18,7 +22,7 @@ function App() {
       </GridItem>
       {/* show එකෙන් large screen device වලට විතරක් aside grid item එක පේන්න හැදුවෑකි. */}
       <Show above="lg">
-        <GridItem area="aside">
+        <GridItem area="aside" paddingX={5}>
           <GenreList />
         </GridItem>
       </Show>
