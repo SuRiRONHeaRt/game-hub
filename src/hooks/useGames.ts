@@ -17,6 +17,7 @@ export interface Game {
   //* this is an array of objects, where each object has a property called "platform" of
   //* type Platform.
   parent_platforms: { platform: Platform }[];
+  metacritic: number;
 }
 
 interface FetchGamesResponse {
