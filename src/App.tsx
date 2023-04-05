@@ -17,7 +17,7 @@ function App() {
       }}
       templateColumns={{
         base: "1fr",
-        lg: "200px 1fr",
+        lg: "250px 1fr",
       }}
     >
       {/* navigation bar එක */}
@@ -27,7 +27,10 @@ function App() {
       {/* show එකෙන් large screen device වලට විතරක් aside grid item එක පේන්න හැදුවෑකි. */}
       <Show above="lg">
         <GridItem area="aside" paddingX={5}>
-          <GenreList onSelectGenre={(genre) => setSelectedGenre(genre)} />
+          <GenreList
+            selectedGenre={selectedGenre}
+            onSelectGenre={(genre) => setSelectedGenre(genre)}
+          />
         </GridItem>
       </Show>
       {/* main area එක */}
