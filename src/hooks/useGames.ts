@@ -1,4 +1,5 @@
 import useData from "./useData";
+import { Genre } from "./useGenres";
 
 export interface Platform {
   id: number;
@@ -16,7 +17,16 @@ export interface Game {
   parent_platforms: { platform: Platform }[];
   metacritic: number;
 }
-
-const useGames = () => useData<Game>("/games");
+//? second arguments is one of the properties of the AXIOS request config object. Sent
+//? as a Query String. set params to an object. In this games hook, we are passing the selected
+//? genre, as a query string parameter to the useData hook. As part of this lesson,k we had to
+//? open up our hook and make it more flexible. Now we can pass query string parameters or
+//? request data to our request objects. We also added an array of dependencies, if any of
+//? these dependencies changes, our effect hook in the useData.ts will re-run and refresh the
+//? data from the server.
+const useGames = (selectedGenre: Genre | null) =>
+  useData<Game>("/games", { params: { genres: selectedGenre?.id } }, [
+    selectedGenre?.id,
+  ]);
 
 export default useGames;
