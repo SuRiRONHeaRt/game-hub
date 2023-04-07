@@ -17,6 +17,7 @@ export interface Game {
   //* type Platform.
   parent_platforms: { platform: Platform }[];
   metacritic: number;
+  rating_top: number;
 }
 //? second arguments is one of the properties of the AXIOS request config object. Sent
 //? as a Query String. set params to an object. In this games hook, we are passing the selected
